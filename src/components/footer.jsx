@@ -1,9 +1,103 @@
+// Footer.js
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 bg-backdrop-filter:'brightness(1.1) contrast(1.2)' text-white p-6">
+      <div className="flex justify-between">
+        <div className="w-1/3">
+          <h3 className="text-lg font-bold mb-4">Contact</h3>
+          <p>Email: contact@restofacile.com</p>
+          <p>Téléphone: +1234567890</p>
+        </div>
+        <div className="w-1/3">
+          <h3 className="text-lg font-bold mb-4">À propos de RestoFacile</h3>
+          <p>Une application pour trouver et réserver les meilleurs restaurants facilement.</p>
+        </div>
+        <div className="w-1/3">
+          <h3 className="text-lg font-bold mb-4">Suivez-nous</h3>
+          <div className="flex">
+            <a href="https://www.facebook.com/restofacile" className="mr-2"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="https://www.twitter.com/restofacile" className="mr-2"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="https://www.instagram.com/restofacile"><FontAwesomeIcon icon={faInstagram} /></a>
+          </div>
+        </div>
+      </div>
+      <div className="text-center mt-6">
+        <p>&copy; 2022 RestoFacile. Tous droits réservés.</p>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
+
+/*import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Footer = () => {
+  return (
+    <footer className="footer bg-gray-800 text-white py-4">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-between">
+          <div className="footer-top">
+            <div className="logo">
+              <img src="/restoFacileLogo.png" alt="restoFacile Logo" />
+            </div>
+            <p className="text-sm">© 2024 restoFacile</p>
+          </div>
+          <div className="footer-links">
+            <ul className="flex space-x-4">
+              <li>
+                <Link to="/about" className="text-gray-500 hover:text-gray-700">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-500 hover:text-gray-700">Contact</Link>
+              </li>
+              <li>
+                <Link to="/terms" className="text-gray-500 hover:text-gray-700">Terms &amp; Conditions</Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-gray-500 hover:text-gray-700">Privacy Policy</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="social-media">
+            <p className="text-sm">Follow us on:</p>
+            <ul className="flex space-x-4">
+              <li>
+                <a href="#" className="text-gray-500 hover:text-gray-700">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-500 hover:text-gray-700">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-500 hover:text-gray-700">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
 
 import React from "react";
 function Footer() {
     return (
         <>
-       <div  className="footer bg-gray-800 text-white fixed bottom-0 w-full">
+       <div  className="footer static bg-gray-800 text-white fixed bottom-0 w-full">
   <div className="container mx-auto px-4 py-4">
         <div className="flex gap-5 content-center justify-around  bg-gradient-to-r from-gray-600 to-black">
             <div className="flex-col justify-around"> 
@@ -34,4 +128,4 @@ function Footer() {
     ) ;
 };
 
-export default Footer;
+export default Footer;*/
