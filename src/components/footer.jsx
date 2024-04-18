@@ -1,11 +1,11 @@
 // Footer.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 bg-backdrop-filter:'brightness(1.1) contrast(1.2)' text-white p-6">
+    <footer className="bg-gray-900 dark:bg-gray-900 dark:bg-opacity-80 p-4 text-white">
       <div className="flex justify-between">
         <div className="w-1/3">
           <h3 className="text-lg font-bold mb-4">Contact</h3>
@@ -16,12 +16,14 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">À propos de RestoFacile</h3>
           <p>Une application pour trouver et réserver les meilleurs restaurants facilement.</p>
         </div>
-        <div className="w-1/3">
+        <div className="w-1/3 pl-25">
           <h3 className="text-lg font-bold mb-4">Suivez-nous</h3>
           <div className="flex">
-            <a href="https://www.facebook.com/restofacile" className="mr-2"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a href="https://www.twitter.com/restofacile" className="mr-2"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a href="https://www.instagram.com/restofacile"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="https://web.facebook.com/home.php" className="mr-2 hover:bg-violet-600 rounded-full pl-1 pr-1"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a href="https://www.twitter.com/restofacile" className="mr-2 hover:bg-violet-400 rounded-full pl-1 pr-1"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href="https://www.instagram.com/restofacile" className="mr-2 hover:bg-violet-400 rounded-full pl-1 pr-1"><FontAwesomeIcon icon={faInstagram} /></a>
+            <a href="https://www.watshapp.com/restofacile" className="mr-2 hover:bg-violet-400 rounded-full pl-1 pr-1"><FontAwesomeIcon icon={faWhatsapp} /></a>
+            
           </div>
         </div>
       </div>
