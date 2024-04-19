@@ -15,7 +15,7 @@ const Header = () => {
                     <NavLink to="/" className="hover:text-[#AF631D]">ACCEUIL</NavLink>
                     <NavLink to="/about" className="hover:text-[#AF631D]">A PROPOS</NavLink>
                     <NavLink to="/restaurant" className="hover:text-[#AF631D]">NOS RESTAURANTS</NavLink>
-                    <NavLink to="/registerrestaurant" className="hover:text-[#AF631D]">INSCRIRE MON RESTAURANT</NavLink>
+                    <NavLink to="/registerform" className="hover:text-[#AF631D]">INSCRIRE MON RESTAURANT</NavLink>
                     <NavLink to="/contact" className="hover:text-[#AF631D]">CONTACT</NavLink>
 
                   <NavLink to='/login' className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 ">

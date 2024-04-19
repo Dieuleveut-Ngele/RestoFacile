@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/acceuil.jsx';
 import Login from './pages/login.jsx';
 import Layout from './components/layout.jsx';
+import RegisterRestaurantForm from './pages/RegisterRestaurantForm.jsx';
 
 import './index.css'
 
@@ -23,6 +24,10 @@ import './index.css'
           path:"/login",
           element:<Login/>
         },
+        {
+          path:"/registerform",
+          element:<RegisterRestaurantForm/>
+        }
       ]
     }
   ]
