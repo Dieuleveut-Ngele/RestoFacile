@@ -27,7 +27,7 @@ const HeroSection = () => {
   return (
     <section className="text-white text-center py-0">
       <Carousel showArrows={false} showStatus={false} showThumbs={false} infiniteLoop autoPlay>
-        <div className="bg-cover bg-center bg-gradient-to-r from-black-500 to-indigo-500 h-screen flex items-center justify-center" style={{backgroundImage: "url('https://galleria.co.ke/storage/2022/05/Web-banner-mbuzi-munch-1-1-1200x600.jpg')"}}>
+        <div className="bg-cover bg-center bg-opacity-90 bg-center bg-opacity-75 h-screen flex items-center justify-cente" style={{backgroundImage: "url('https://galleria.co.ke/storage/2022/05/Web-banner-mbuzi-munch-1-1-1200x600.jpg')"}}>
           <h1 className="text-4xl">Créez des souvenirs inoubliables
           Laissez-nous vous guider vers une expérience gastronomique sur mesure</h1>
         </div>

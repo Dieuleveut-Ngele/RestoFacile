@@ -3,6 +3,7 @@ import Main from "../components/main"
 import HeroSection from "../components/heroSection";
 import RestaurantReservationForm from "./RestaurantReservationForm";
 import Newsletter from "../components/newsletter";
+import Restaurant from "../components/restaurant";
 
 
  function HomePage() {
@@ -10,8 +11,9 @@ import Newsletter from "../components/newsletter";
         <> 
         <HeroSection/>  
         <RestaurantReservationForm/> 
+        <Restaurant/>
         <Main/>  
-        < Newsletter/>            
+        <Newsletter/>            
         </>
     );
     

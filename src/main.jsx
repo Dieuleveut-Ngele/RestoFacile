@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/acceuil.jsx';
 import Layout from './components/layout.jsx';
-import Login from './pages/login.jsx';
-import About from './pages/about.jsx';
+
 import './index.css'
 
 
@@ -19,14 +18,7 @@ import './index.css'
           path:"/",
           element:<HomePage/>,
         },
-        {
-          path:"/about",
-          element:<About/>
-        },
-        {
-          path:"/login",
-          element:<Login/>
-        },
+       
       ]
     }
   ]

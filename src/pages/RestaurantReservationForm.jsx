@@ -1,38 +1,3 @@
-/*import React from 'react';
-import { CalendarIcon, ClockIcon, LocationMarkerIcon, UserIcon, ChevronDownIcon } from '@heroicons/react/outline';
-
-const RestaurantReservationForm = () => {
-    return (
-        <form className="bg-blue-200 p-4 rounded-lg">
-            <h2 className="text-center text-2xl font-bold mb-4">Find your table for any occasion</h2>
-            <div className="flex items-center justify-center">
-                <input type="date" id="date" name="date" className="flex items-center bg-white p-2 border border-gray-300 rounded mr-2">
-                    <CalendarIcon className="h-6 w-6 text-gray-600 mr-2" />
-                    Enter date
-                    <ChevronDownIcon className="h-6 w-6 text-gray-600 ml-2" />
-                </input>
-                <input type="time" id="time" name="time" className="flex items-center bg-white p-2 border border-gray-300 rounded mr-2">
-                    <ClockIcon className="h-6 w-6 text-gray-600 mr-2" />
-                    Enter time
-                    <ChevronDownIcon className="h-6 w-6 text-gray-600 ml-2" />
-                </input>
-                <input className="flex items-center bg-white p-2 border border-gray-300 rounded mr-2">
-                    <UserIcon className="h-6 w-6 text-gray-600 mr-2" />
-                    Number of people
-                    <ChevronDownIcon className="h-6 w-6 text-gray-600 ml-2" />
-                </input>
-                <input className="flex items-center bg-white p-2 border border-gray-300 rounded mr-2">
-                    <LocationMarkerIcon className="h-6 w-6 text-gray-600 mr-2" />
-                    Enter location or restaurant
-                    <ChevronDownIcon className="h-6 w-6 text-gray-600 ml-2" />
-                </input>
-                <button className="bg-red-500 text-white px-4 py-2 rounded">Let's go</button>
-            </div>
-        </form>
-    );
-}
-
-export default RestaurantReservationForm;*/
 import { CalendarIcon, ClockIcon, LocationMarkerIcon, UserIcon, ChevronDownIcon } from '@heroicons/react/outline';
 import React, { useState } from 'react';
 
@@ -118,7 +83,7 @@ const RestaurantReservationForm = () => {
       
     </div>
         <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg">
-          Let's go
+          Reserver
         </button>
         
       </div>
