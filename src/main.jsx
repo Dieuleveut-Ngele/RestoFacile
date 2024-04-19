@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/acceuil.jsx';
+import Login from './pages/login.jsx';
 import Layout from './components/layout.jsx';
 
 import './index.css'
@@ -18,7 +19,10 @@ import './index.css'
           path:"/",
           element:<HomePage/>,
         },
-       
+        {
+          path:"/login",
+          element:<Login/>
+        },
       ]
     }
   ]
