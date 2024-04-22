@@ -30,7 +30,7 @@ import './index.css'
         {
           path:"/contact",
           element:<Contact/>
-        }, 
+        },
       ]
     }
   ]

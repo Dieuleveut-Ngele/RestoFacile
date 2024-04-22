@@ -112,8 +112,9 @@ export default function Login () {
                   Continue avec Twitter
                 </a>
               </div>
-              
-          
+              <div className="text-center py-2 text-gray-500">
+                 Don't have an account yet? <Link className="underline font-semibold leading-6 text-indigo-600 hover:text-indigo-500" to={'/register'}>S'incrire</Link>
+              </div>
             </form>
           </div>
         </div>
