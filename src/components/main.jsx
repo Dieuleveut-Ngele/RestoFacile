@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollToTopPage from './ScrollTopPage';
 
 const Main = () => {
   return (
@@ -18,7 +19,8 @@ const Main = () => {
           <div className="flex-1">
             {/* Insérez ici l'image du restaurant */}
           </div>
-        </div>
+          <ScrollToTopPage/>
+        </div>   
       );
     };
     
