@@ -4,8 +4,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/acceuil.jsx';
 import Login from './pages/login.jsx';
 import Layout from './components/layout.jsx';
-import RegisterRestaurantForm from './pages/RegisterRestaurantForm.jsx';
+import RegisterRestaurantForm from './pages/registerRestaurantForm.jsx';
 import Contact from './pages/contact.jsx';
+import Register from './pages/register.jsx';
+import AboutPage from './pages/about.jsx';
 import './index.css'
 
 
@@ -30,6 +32,14 @@ import './index.css'
         {
           path:"/contact",
           element:<Contact/>
+        },
+        {
+          path:"/register",
+          element:<Register/>
+        },
+        {
+          path:"/about",
+          element:<AboutPage/>
         },
       ]
     }
