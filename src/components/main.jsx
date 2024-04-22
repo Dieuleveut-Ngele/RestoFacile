@@ -1,15 +1,26 @@
 import React from 'react';
-//import HeroSection from "./heroSection";
 
 const Main = () => {
   return (
-    <section className="mt-n-80 pb-80">
-      
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec leo eu libero lacinia condimentum.</p>
-      <p>Nulla facilisi. Vivamus ultricies, nunc et luctus tempor, lorem nisi tincidunt quam, non consectetur justo lectus ac justo.</p>
-
-    </section>
-  );
-}
-
+    
+        <div className="flex">
+          <div className="flex-1 bg-dark-green-500 p-8">
+            <div className="text-black">
+              <p className="text-xl font-bold mb-4">RestoFacile</p>
+              <p className="mb-4">Évitez les incertitudes</p>
+              <p className="mb-4">Trouvez des restaurants que vous adorerez,,</p>
+              <p className="mb-4">quelle que soit votre humeur...</p>
+              <button className="bg-white text-dark-green-500 px-4 py-2 rounded-full font-bold">
+                RESERVER
+              </button>
+            </div>
+          </div>
+          <div className="flex-1">
+            {/* Insérez ici l'image du restaurant */}
+          </div>
+        </div>
+      );
+    };
+    
+ 
 export default Main;

@@ -5,9 +5,8 @@ import HomePage from './pages/acceuil.jsx';
 import Login from './pages/login.jsx';
 import Layout from './components/layout.jsx';
 import RegisterRestaurantForm from './pages/RegisterRestaurantForm.jsx';
-
+import Contact from './pages/contact.jsx';
 import './index.css'
-
 
 
  const router = createBrowserRouter(
@@ -27,7 +26,11 @@ import './index.css'
         {
           path:"/registerform",
           element:<RegisterRestaurantForm/>
-        }
+        },
+        {
+          path:"/contact",
+          element:<Contact/>
+        }, 
       ]
     }
   ]
