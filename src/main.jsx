@@ -8,7 +8,7 @@ import RegisterRestaurantForm from './pages/RegisterRestaurantForm.jsx';
 import Contact from './pages/contact.jsx';
 import Register from './pages/register.jsx';
 import AboutPage from './pages/about.jsx';
-//import RestaurantAllList from './pages/RestaurantsList.jsx';
+import RestaurantAllList from './pages/RestaurantsList.jsx';
 import './index.css'
 
 
@@ -36,13 +36,16 @@ import './index.css'
         },
         {
           path:"/register",
-          element:<Register/>
+          element:<RestaurantAllList/>
         },
         {
           path:"/about",
           element:<AboutPage/>
         },
-      
+        {
+          path:"/about",
+          element:<AboutPage/>
+        },
       ]
     }
   ]
