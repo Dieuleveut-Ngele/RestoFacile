@@ -5,7 +5,7 @@ import Footer from "./footer";
 function Layout() {
     return(
         <>
-        <nav>
+        <nav className="">
             <Header/>
         </nav>
         <main>

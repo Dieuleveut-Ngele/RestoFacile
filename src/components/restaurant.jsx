@@ -120,6 +120,7 @@ const restaurantsPopulaires = [
 
 const restaurantsRecommandes = [
   {
+    id: '1',
     image: 'https://media.istockphoto.com/id/1248298343/fr/photo/rendu-3d-dun-int%C3%A9rieur-de-restaurant-de-luxe-la-nuit.jpg?s=612x612&w=0&k=20&c=CQtf6hfxGGPP3EN52yW-WisCws5Kst-bWM6LWmMMEIU=',
     name: 'RestaurantA',
     price: '$$$',
@@ -130,6 +131,7 @@ const restaurantsRecommandes = [
     parking: "Parking gratuit disponible"
   },
   {
+    id: '2',
     image: 'https://media.istockphoto.com/id/626311516/fr/photo/chef-dans-un-h%C3%B4tel-ou-restaurant-kitchen-cooking-uniquement-les-mains.jpg?s=612x612&w=0&k=20&c=pcOvFLud7nH7sSU_KWcyJophE3m4tfGE9y_hrQktLvQ=',
     name: 'RestaurantB',
     price: '$$$',
@@ -137,6 +139,7 @@ const restaurantsRecommandes = [
     available: false
   },
   {
+    id: '3',
     image: 'https://media.istockphoto.com/id/1285009750/fr/photo/couples-joyeux-de-sourire-sasseyant-dans-un-restaurant-ayant-le-d%C3%AEner-et-bavardant-homme.jpg?s=612x612&w=0&k=20&c=a4pFdnY5MtQf8DvaWGX51IvTObeXnYb3yr4cSwPiEkc=',
     name: 'RestaurantD',
     price: '$$$',
@@ -151,6 +154,7 @@ const restaurantsRecommandes = [
     available: false
   },
   {
+    id: '4',
     image: 'https://media.istockphoto.com/id/1178591496/fr/photo/vue-%C3%A0-travers-la-fen%C3%AAtre-du-personnel-et-des-clients-%C3%A0-lint%C3%A9rieur-du-restaurant-buns-and-buns.jpg?s=612x612&w=0&k=20&c=fUE7J9lSgL_M81yosoFLQBznsX14hNedrpILj1YaWJo=',
     name: 'RestaurantD',
     price: '$$$',
@@ -158,13 +162,14 @@ const restaurantsRecommandes = [
     available: false
   },
   {
+    id: '5',
     image: 'https://media.istockphoto.com/id/1428594094/fr/photo/int%C3%A9rieur-de-caf%C3%A9-vide-avec-tables-en-bois-cafeti%C3%A8re-p%C3%A2tisseries-et-suspensions.jpg?s=1024x1024&w=is&k=20&c=G0I_0mtBg532iRQXicXIthe6iipXvV44V4t3wXPQ3mA=',
     name: 'RestaurantD',
     price: '$$$',
     city: 'Lorem Ipsum',
     available: false
   },
-];
+]; 
 
 const RestaurantList = ({ restaurants, titre }) => (
   

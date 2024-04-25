@@ -14,10 +14,10 @@ const Header = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center md:space-x-4 mt-4 md:mt-0">
-          <NavLink to="/" className="hover:text-[#AF631D]">ACCEUIL</NavLink>
-          <NavLink to="/about" className="hover:text-[#AF631D]">À PROPOS</NavLink>
-          <NavLink to="/restaurant" className="hover:text-[#AF631D]">NOS RESTAURANTS</NavLink>
-          <NavLink to="/registerform" className="hover:text-[#AF631D]">INSCRIRE MON RESTAURANT</NavLink>
+          <NavLink to="/" className="hover:bg-gray-800 hover:text-slate-400 hover:rounded-full py-2 px-4">ACCEUIL</NavLink>
+          <NavLink to="/about" className="hover:bg-gray-800 hover:text-slate-400 hover:rounded-full py-2 px-4">À PROPOS</NavLink>
+          <NavLink to="/listerestaurant" className="hover:bg-gray-800 hover:text-slate-400 hover:rounded-full py-2 px-4">NOS RESTAURANTS</NavLink>
+          <NavLink to="/registerform" className="hover:bg-gray-800 hover:text-slate-400 hover:rounded-full py-2 px-4">INSCRIRE MON RESTAURANT</NavLink>
           <NavLink to="/contact" className="hover:text-[#AF631D]">CONTACT</NavLink>
 
           <NavLink to='/login' className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 mt-4 md:mt-0 bg-gray-800 drop-shadow-md hover:drop-shadow-xl" >
@@ -56,7 +56,7 @@ const Header = () => {
              <span className="text-xl font-bold">Logo RestoFacile</span>
         </div>
 
-        <div className="flex items-center space-x-4 ">
+        <div className="flex items-center space-x-4 "> 
                     <NavLink to="/" className="hover:text-[#AF631D]">ACCEUIL</NavLink>
                     <NavLink to="/about" className="hover:text-[#AF631D]">À PROPOS</NavLink>
                     <NavLink to="/restaurant" className="hover:text-[#AF631D]">NOS RESTAURANTS</NavLink>

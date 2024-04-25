@@ -13,7 +13,7 @@ export default function Register() {
               alt="Your Company"
             />
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-              S'incrire
+              S'inscrire
             </h2>
           </div>
   
@@ -75,3 +75,4 @@ export default function Register() {
       </>
     )
   }
+  

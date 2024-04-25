@@ -48,6 +48,7 @@ const RegisterRestaurantForm = () => {
     <div className="container mx-auto py-8">
       {showOwnerForm ? (
         <OwnerInfoForm ownerInfo={ownerInfo} handleOwnerInfoChange={handleOwnerInfoChange} handleNext={handleNext} />
+        
       ) : (
         <RestaurantInfoForm restaurantInfo={restaurantInfo} handleRestaurantInfoChange={handleRestaurantInfoChange} handleRegister={handleRegister} handleGoBack={handleGoBack} />
       )

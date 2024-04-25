@@ -15,6 +15,7 @@ const RestaurantReservationForm = () => {
     setFilteredFruits(filteredResults);
   };
 
+
   const handleFruitClick = (fruit) => {
     setInputValue(fruit);
     setFilteredFruits([]);
@@ -22,6 +23,7 @@ const RestaurantReservationForm = () => {
 
   return (
     <div className="bg-slate-800 p-5 md:p-10 mb-5">
+      
       <h2 className="text-white text-center mb-4 font-Georgia">
         Qu'attendez-vous ? Trouvez votre table pour toute occasion
       </h2>
@@ -60,16 +62,16 @@ const RestaurantReservationForm = () => {
             <option value="9">+9 personnes</option>
           </select>
         </div>
-        <div className="flex items-center border-2 border-white bg-white rounded-lg">
-          <LocationMarkerIcon className="h-6 w-6 text-gray-700 ml-2" />
+        <div className="">
+        <LocationMarkerIcon className="h-6 w-6 text-gray-700 ml-2" />
           <input
             type="text"
-            className="p-2 outline-none"
-            placeholder="Location, Restaurant, or Cuisine"
+            placeholder="Search restaurants..."
             value={inputValue}
             onChange={handleInputChange}
+            className="w-full py-2 px-4 mb-4 border rounded"
           />
-          <ul className="border border-gray-300 rounded p-2 max-w-xs absolute bg-white">
+          <ul className="p-2 outline-none">
             {filteredFruits.map(fruit => (
               <li key={fruit} onClick={() => handleFruitClick(fruit)} className="cursor-pointer hover:bg-gray-200 p-1">
                 {fruit}
@@ -77,9 +79,14 @@ const RestaurantReservationForm = () => {
             ))}
           </ul>
         </div>
-        <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg">
+       
+        <button 
+        className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg"
+        
+        >
           Réserver
         </button>
+        
       </div>
     </div>
   );

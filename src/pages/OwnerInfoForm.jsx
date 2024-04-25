@@ -18,15 +18,12 @@ export default function OwnerInfoForm({ ownerInfo, handleOwnerInfoChange, handle
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Owner Information</h2>
-        <p className="mt-2 text-lg leading-8 text-gray-600">
-          Aute magna irure deserunt veniam aliqua magna enim voluptate.
-        </p>
       </div>
       <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>    
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
-              First name
+              Prenom
             </label>
             <div className="mt-2.5">
               <input
@@ -41,7 +38,7 @@ export default function OwnerInfoForm({ ownerInfo, handleOwnerInfoChange, handle
           </div>
           <div>
             <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-gray-900">
-              Last name
+              Nom
             </label>
             <div className="mt-2.5">
               <input
@@ -56,7 +53,7 @@ export default function OwnerInfoForm({ ownerInfo, handleOwnerInfoChange, handle
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="company" className="block text-sm font-semibold leading-6 text-gray-900">
-              Company
+              Entreprise
             </label>
             <div className="mt-2.5">
               <input
@@ -85,12 +82,12 @@ export default function OwnerInfoForm({ ownerInfo, handleOwnerInfoChange, handle
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-gray-900">
-              Phone number
+              Téléphone
             </label>
             <div className="relative mt-2.5">
               <div className="absolute inset-y-0 left-0 flex items-center">
               <label htmlFor="code-country" className="sr-only">
-                  Country
+                  Code
                 </label>
                 <select
                   id="code-country"

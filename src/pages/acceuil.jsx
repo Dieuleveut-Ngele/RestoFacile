@@ -5,6 +5,8 @@ import RestaurantReservationForm from "./RestaurantReservationForm";
 import Newsletter from "../components/newsletter";
 import Restaurant from "../components/restaurant";
 
+//import { Outlet } from "react-router-dom";
+
 
  function HomePage() {
     return (
