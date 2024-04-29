@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 export default function Login () {
   return (
     <section className="yl-10 px-6 py-12 lg:px-8">
-      <div className="container h-full px-6 py-24">
+      <div className="container h-full">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <img
@@ -14,9 +14,9 @@ export default function Login () {
               alt="Phone image"
             />
           </div>
-           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Connectez-vous 
           </h2>
             <div>

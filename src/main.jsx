@@ -12,6 +12,7 @@ import RestaurantAllList from './pages/RestaurantsList.jsx';
 import './index.css'
 
 
+
  const router = createBrowserRouter(
   [
     {
@@ -36,16 +37,17 @@ import './index.css'
         },
         {
           path:"/register",
+          element:<Register/>
+        },
+        {
+          path:"/about",
+          element:<AboutPage/>
+        },
+        {
+          path:"/listerestaurant",
           element:<RestaurantAllList/>
         },
-        {
-          path:"/about",
-          element:<AboutPage/>
-        },
-        {
-          path:"/about",
-          element:<AboutPage/>
-        },
+      
       ]
     }
   ]

@@ -143,4 +143,37 @@ const RestaurantAllList = () => {
   );
 };
 
-export default RestaurantAllList;
+export default RestaurantAllList; 
+
+/*
+import React, { useState, useEffect } from 'react';
+
+const RestaurantsList = () => {
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetch('/restaurants')
+      .then((response) => response.json())
+      .then((data) => setRestaurants(data));
+  }, []);
+
+  return (
+    <div>
+      <h1>Liste des restaurants</h1>
+      <ul>
+        {restaurants.map((restaurant) => (
+          <li key={restaurant.id}>
+            <img src={restaurant.image} alt={restaurant.name} />
+            <h2>{restaurant.name}</h2>
+            <p>Ville : {restaurant.city}</p>
+            <p>Disponibilité : {restaurant.availability}</p>
+            <p>Prix : {restaurant.price}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default RestaurantsList; */
+
