@@ -13,8 +13,8 @@ const HeroSection = () => {
         <div className="bg-cover bg-center bg-opacity-90 bg-center bg-opacity-75 h-screen flex items-center justify-center" style={{backgroundImage: "url('https://media.istockphoto.com/id/1361899698/fr/photo/ensemble-de-couverts-dor%C3%A9s-avec-assiette-sombre.jpg?s=1024x1024&w=is&k=20&c=4Wko0sdm5XVEWz21rEuZgH9EY1LKvPHMJWAM2sJdjZQ=')"}}>
           <h1 className="text-2xl md:text-4xl">Créez des souvenirs inoubliables. Laissez-nous vous guider vers une expérience gastronomique sur mesure.</h1>
         </div>
-        <div className="bg-cover bg-center bg-opacity-90 bg-center bg-opacity-75 h-screen flex items-center justify-center" style={{backgroundImage: "url('https://img.freepik.com/photos-gratuite/burger-explosif-legumes-fromage-fondu-fond-noir-generative-ai_157027-1734.jpg?size=626&ext=jpg&ga=GA1.2.783867296.1693781121&semt=sph')"}}>
-          <h1 className="text-2xl md:text-4xl">Créez des souvenirs inoubliables. Laissez-nous vous guider vers une expérience gastronomique sur mesure.</h1>
+        <div className="bg-cover bg-center bg-opacity-50 h-screen flex items-center justify-center" style={{backgroundImage: "url('https://img.freepik.com/photos-gratuite/burger-explosif-legumes-fromage-fondu-fond-noir-generative-ai_157027-1734.jpg?size=626&ext=jpg&ga=GA1.2.783867296.1693781121&semt=sph')"}}>
+          <h1 className="text-2xl md:text-4xl bg-opacity-50">Créez des souvenirs inoubliables. Laissez-nous vous guider vers une expérience gastronomique sur mesure.</h1>
         </div>
       </Carousel>
     </section>

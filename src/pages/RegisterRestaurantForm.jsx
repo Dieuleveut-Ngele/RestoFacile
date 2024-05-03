@@ -3,6 +3,36 @@ import OwnerInfoForm from './OwnerInfoForm';
 import RestaurantInfoForm from './RestaurantInfoForm';
 
 const RegisterRestaurantForm = () => {
+
+  const [name, setName] = useState('');
+  const [city, setCity] = useState('');
+  const [availability, setAvailability] = useState('');
+  const [price, setPrice] = useState('');
+  const [image, setImage] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('city', city);
+    formData.append('availability', availability);
+    formData.append('price', price);
+    formData.append('image', image);
+
+    const response = await fetch('http://localhost:3000/restaurants', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (response.ok) {
+      const newRestaurant = await response.json();
+      setAddedRestaurant(newRestaurant);
+    } else {
+      // Gérer les erreurs
+    };
+  };
+
+  
   const [showOwnerForm, setShowOwnerForm] = useState(true);
   const [ownerInfo, setOwnerInfo] = useState({
     firstName: '',

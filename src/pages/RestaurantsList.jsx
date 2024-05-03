@@ -1,4 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const restaurants = [
+  {
+    id: 1,
+    name: 'Restaurant A',
+    image: 'https://img.freepik.com/photos-premium/restaurant-luxueux-palmiers-interieur-grand-atrium-verre-du-bois_295714-6213.jpg?size=626&ext=jpg&ga=GA1.2.783867296.1693781121&semt=sph',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  },
+  // Ajoutez ici d'autres restaurants
+];
+
+const RestaurantAllList = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredRestaurants = restaurants.filter(restaurant =>
+    restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className=''>
+      <div className="mx-auto max-w-2xl text-center mt-10">
+        <input
+          type="text"
+          placeholder="Rechercher un restaurant"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-md mb-4"
+        />
+        <p className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Les différents restaurants de la ville</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 rounded-sm">
+        {filteredRestaurants.map((restaurant) => (
+          <div key={restaurant.id} className="bg-white p-4 shadow-md mb-10">
+            <img src={restaurant.image} alt={restaurant.name} className="w-full h-40 object-cover mb-4 rounded-sm" />
+            <h2 className="text-lg font-bold">{restaurant.name}</h2>
+            <p className="text-gray-600 mb-4">{restaurant.description}</p>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded">En savoir plus</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default RestaurantAllList;
+
+
+
+/*import React from 'react';
 
 const restaurants = [
   {

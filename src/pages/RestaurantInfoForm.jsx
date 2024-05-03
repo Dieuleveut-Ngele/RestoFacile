@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 
 const RestaurantInfoForm = ({ restaurantInfo, handleRestaurantInfoChange, handleRegister, handleGoBack }) => {
@@ -8,6 +8,7 @@ const RestaurantInfoForm = ({ restaurantInfo, handleRestaurantInfoChange, handle
       <form className="grid grid-cols-1 gap-4">
         <label htmlFor="name" className="text-lg">Restaurant Name</label>
         <input type="text" id="name" name="name" value={restaurantInfo.name} onChange={handleRestaurantInfoChange} className="p-2 rounded-md border border-gray-300" />
+
 
         <label htmlFor="address" className="text-lg">Address</label>
         <input type="text" id="address" name="address" value={restaurantInfo.address} onChange={handleRestaurantInfoChange} className="p-2 rounded-md border border-gray-300" />
@@ -27,43 +28,17 @@ const RestaurantInfoForm = ({ restaurantInfo, handleRestaurantInfoChange, handle
   );
 };
 
- export default RestaurantInfoForm 
+ export default RestaurantInfoForm */
 
 
-/*
+
 import React, { useState } from 'react';
 
-const RestaurantInfoForm = ({ handleGoBack }) => {
-  const [name, setName] = useState('');
-  const [city, setCity] = useState('');
-  const [availability, setAvailability] = useState('');
-  const [price, setPrice] = useState('');
-  const [image, setImage] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('city', city);
-    formData.append('availability', availability);
-    formData.append('price', price);
-    formData.append('image', image);
-
-    const response = await fetch('/restaurants', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (response.ok) {
-      const newRestaurant = await response.json();
-      setAddedRestaurant(newRestaurant);
-    } else {
-      // Gérer les erreurs
-    };
- 
+const RestaurantInfoForm = ({ city, availability, price, handleRegister, addedRestaurant, 
+  handleSubmit, handleGoBack }) => {
 
   return (
-  <div>
+  <div className='bg-opacity-70 '>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xltracking-tight text-gray-900 sm:text-4xl">
           Inscrire votre restaurant</h2>
@@ -152,9 +127,9 @@ const RestaurantInfoForm = ({ handleGoBack }) => {
 </div>
   );
  };
-};
 
-export default RestaurantInfoForm; */
+
+export default RestaurantInfoForm; 
 
 
 
