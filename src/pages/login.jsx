@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import authService from '../../services/authService';
-import {Link, Navigate} from "react-router-dom"
+import authService from '../services/authService'
+import {Link} from "react-router-dom"
 
 export default function Login () {
   
@@ -19,11 +19,11 @@ export default function Login () {
         setError(error.message);
       }
     };
-  };
+  
 
   return (
     <section>
-      <div className="container h-full">
+      <div className= "container h-full">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <img
@@ -145,5 +145,5 @@ export default function Login () {
       </div>
     </section>
   );
-
+};
 
