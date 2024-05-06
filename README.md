@@ -1,8 +1,27 @@
-# React + Vite
+Bienvenu dans React Js & Tailwind CSS : Partie fron-end de mon
+Projet Chef-d'oeuvre pour la fin de ma formation à Kadea Academy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# DESCRIPTION 
 
-Currently, two official plugins are available:
+RestoFacile est une application qui simplifie la gestion des restaurants,  en permettant la reservation des tables, la gestion des menus, des commandes, et bien plus encore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# INSTALATION 
+
+0. Rassurez-vous preparer votre environnement en installant :
+
+- git : https://git-scm.com/downloads
+
+Pour installer et travailler sur ce projet, commencer par :
+
+1. Clonez le dépôt du front-end 
+
+Utiliser ce lien pour cloner  https://github.com/kadea-academy-learners/capstone-c2-Dieuleveut-Ngele.git
+Ouvrez votre terminal et tappe la commande git clone + coller le lien ci-dessus
+
+2. Accédez au répertoire
+cd capstone-c2-Dieuleveut-Ngele : la commande cd permet de se positionner sur le repertoire
+
+3. Installez les dépendances 
+Utiliser la commande : npm install
+
