@@ -12,20 +12,21 @@ const Header = () => {
   return (
     <div className="w-full bg-gray-900 overflow-hidden shadow-lg p-5 m-1 bg-white font-sans">
       <nav className="flex flex-col md:flex-row justify-between w-full p-1 text-blue bg-opacity-50">
-        
-         {/* Placeholder pour le logo */}
-        <div className="flex items-center justify-between w-full md:w-auto">
+      <div className="flex gap items-center">
+
+         {/* Placeholder pour le logo */} 
+        <div className="flex items-center justify-between w-full md:w-auto displa">
         <span className="text-xl font-bold">Logo RestoFacile</span>
         </div>
 
         {/* Menu mobile */}
-        
           <div className="md:hidden flex items-center">
             {isOpen ? (
               <XIcon className="h-6 w-6 text-gray-900 cursor-pointer font-bold flex justify-end ml-auto" onClick={toggleMenu} />
             ) : (
               <MenuIcon className="h-6 w-6 text-gray-900 cursor-pointer font-bold flex justify-end ml-auto"  onClick={toggleMenu} />
             )}
+          </div>
           </div>
        
         <div className={`md:flex ${isOpen ? 'flex' : 'hidden'} flex-col font-semibold md:flex-row items-center md:space-x-4 mt-4 md:mt-0`}>
@@ -53,6 +54,9 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
 
 
 

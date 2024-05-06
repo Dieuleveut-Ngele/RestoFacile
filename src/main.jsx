@@ -9,6 +9,7 @@ import Contact from './pages/contact.jsx';
 import Register from './pages/register.jsx';
 import AboutPage from './pages/about.jsx';
 import RestaurantAllList from './pages/RestaurantsList.jsx';
+
 //import ReservationForm from './pages/ReservationForm.jsx';
 import './index.css'
 //import AddRestaurant from './pages/AddRestaurant.jsx';
@@ -56,6 +57,7 @@ import './index.css'
    }
   ]
 )
+        
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>  

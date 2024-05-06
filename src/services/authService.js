@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/login';
+const API_URL = 'https://capstone2-c2-dieuleveut-ngele.onrender.com/user/login';
 
 const authService = {
   login: async (email, password) => {

@@ -1,10 +1,9 @@
 import React from "react";
-import Main from "../components/main"
 import HeroSection from "../components/heroSection";
 import RestaurantReservationForm from "./RestaurantReservationForm";
 import Newsletter from "../components/newsletter";
 import Restaurant from "../components/restaurant";
-
+import "../App.css"
 //import { Outlet } from "react-router-dom";
 
 
@@ -14,14 +13,14 @@ import Restaurant from "../components/restaurant";
         <HeroSection/>  
         <RestaurantReservationForm/> 
         <Restaurant/>
-        <Main/>  
+        {/* <Main/>  */}
         <Newsletter/>            
         </>
-    );
-    
+    );   
 }
 
 export default HomePage;
+
 
 
 

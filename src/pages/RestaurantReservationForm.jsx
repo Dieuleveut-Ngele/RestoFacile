@@ -6,9 +6,59 @@ const fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape
 
 const RestaurantReservationForm = () => {
 
+  const [fruits, setFruits] = useState([]);
+  const [civility, setCivility] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  
+  const [subscribeNews, setSubscribeNews] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [filteredFruits, setFilteredFruits] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showPopups, setShowPopups] = useState(false);
+
+  const handleConfirmReservation = () => {
+    setShowPopups(true); // Définissez showPopup à true pour afficher le message de confirmation
+  };
+
+  useEffect(() => {
+    const fetchFruits = async () => {
+      try {
+        const response = await axios.get('URL_DE_VOTRE_API/fruits');
+        setFruits(response.data);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des fruits :', error);
+      }
+    };
+
+    fetchFruits();
+  }, []);
+
+  const handleReservationFormClick = async () => {
+    try {
+      const response = await axios.post('URL_DE_VOTRE_API/reservations', {
+        civility,
+        firstName,
+        lastName,
+        phone,
+        email,
+        subscribeNews,
+      });
+
+      console.log('Réponse de l\'API :', response.data);
+      setShowPopups(true);
+      sendConfirmationEmail();
+      handleConfirmReservation();
+    } catch (error) {
+      console.error('Erreur lors de la demande de réservation :', error);
+    }
+  };
+
   const sendConfirmationEmail = () => {
+
     const subject = 'Confirmation de réservation';
     const message = 'Votre réservation a été confirmée. Merci!';
     
@@ -41,12 +91,6 @@ const RestaurantReservationForm = () => {
     });
   };
   
-  const [inputValue, setInputValue] = useState('');
-  const [filteredFruits, setFilteredFruits] = useState([]);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-  const [showPopup, setShowPopup] = useState(false);
-
   const handleReservationClick = () => {
     setShowPopup(true);
     sendConfirmationEmail();
@@ -58,7 +102,7 @@ const RestaurantReservationForm = () => {
 
     const filteredResults = fruits.filter(fruit => fruit.toLowerCase().startsWith(input));
     setFilteredFruits(filteredResults);
-    setShowDropdown(true);
+    setShowDropdown(false);
   };
 
   const handleFruitClick = (fruit) => {
@@ -177,6 +221,14 @@ const RestaurantReservationForm = () => {
         Qu'attendez-vous ? Trouvez votre table pour toute occasion
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 ">
+      {showPopups && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 opacity-90 flex items-center justify-center">
+          <div className="bg-black p-8 rounded-lg">
+            <h2 className="text-white text-2xl mb-4">Confirmation de réservation</h2>
+            <p className="text-white">Votre réservation a été confirmée. Merci!</p>
+          </div>
+        </div>
+      )}
       
 <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
   <div className="flex items-center border-2 border-white bg-white rounded-lg w-full md:w-auto">

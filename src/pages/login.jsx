@@ -1,26 +1,38 @@
 import React, { useState } from 'react';
-import authService from '../services/authService'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom";
+import axios from "axios";
 
 export default function Login () {
   
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-  
-    const handleLogin = async (e) => {
-      e.preventDefault();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-      try {
-        const token = await authService.login(email, password);
-        // Stocker le token dans le contexte ou les cookies selon vos besoins
-        console.log('Token:', token);
-      } catch (error) {
-        setError(error.message);
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('https://capstone2-c2-dieuleveut-ngele.onrender.com/api/login', {
+        email,
+        password,
+      });
+
+      if (response.data.token) {
+        // Connexion réussie, rediriger vers la page d'accueil avec un message
+        alert('Connexion réussie');
+        navigate('/')
+       
+      } else {
+        setError('Erreur lors de la connexion');
       }
-    };
-  
+    } catch (error) {
+      console.error('Erreur lors de la connexion :', error);
+      setError('Erreur lors de la connexion');
+    }
+  };
 
+  
   return (
     <section>
       <div className= "container h-full">
@@ -36,6 +48,7 @@ export default function Login () {
             <form className="space-y-6" onSubmit={handleLogin}>
               <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 Connectez-vous
+                {error && <p className="text-red-500 mb-4 sm-5">{error}</p>}
               </h2>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -50,11 +63,10 @@ export default function Login () {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
-
               <div>
                 <div className="flex items-center justify-between">
                   <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
@@ -70,7 +82,7 @@ export default function Login () {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
 
@@ -81,12 +93,13 @@ export default function Login () {
                 </div>
               </div>
 
-              {error && <div className="text-red-500 text-sm">{error}</div>}
-
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-gray-700 px-3 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-gray-700 px-3 py-2.5 text-sm font-semibold leading-6 
+                  text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 
+                  focus-visible:outline-indigo-600"
+                  onClick={handleLogin}
                 >
                   Se connecter
                 </button>
@@ -145,5 +158,5 @@ export default function Login () {
       </div>
     </section>
   );
-};
+}; 
 

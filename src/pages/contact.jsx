@@ -2,7 +2,7 @@
 function Contact() {
   return (
     <>
-      <footer className="bg-black-800 text-black py-8 px-4">
+      <div className="bg-black-800 text-black py-8 px-4">
         <section class="white py-0 px-0">
           <div className="relative w-full h-48">
             <img
@@ -113,7 +113,7 @@ function Contact() {
           </div>
        </form>
     </div>
-  </footer>
+  </div>
     </>
   );
 }
