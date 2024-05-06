@@ -25,3 +25,5 @@ cd capstone-c2-Dieuleveut-Ngele : la commande cd permet de se positionner sur le
 3. Installez les dépendances 
 Utiliser la commande : npm install
 
+Pour demarrer le projet executer la commande : npm start
+
