@@ -11,7 +11,8 @@ const Header = () => {
 
   return (
     <div className="w-full bg-gray-900 overflow-hidden shadow-lg p-5 m-1 bg-white font-sans">
-      <nav className="flex flex-col md:flex-row justify-between w-full p-1 text-blue bg-opacity-50">
+      <nav className="flex flex-col md:flex-row justify-between w-full p-1 text-blue bg-opacity-50 
+      z-50 sticky inset-0-w-full">
       <div className="flex gap items-center">
 
          {/* Placeholder pour le logo */} 
