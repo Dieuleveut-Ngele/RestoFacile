@@ -41,8 +41,8 @@ export default function Login () {
   return (
 
     <section> 
-        {loading ? (
-        <Loader /> 
+         {loading ? (
+         <Loader /> 
       ) : (
       <div className= "container h-full">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
