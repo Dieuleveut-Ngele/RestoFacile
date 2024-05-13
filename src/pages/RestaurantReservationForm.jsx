@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SearchCircleIcon, UserIcon } from '@heroicons/react/outline';
+
 //import ConfirmationPopup from './ConfirmationPop-up';
 
-const fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew'];
+const restaurants = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew'];
 
 const RestaurantReservationForm = () => {
 
-  const [fruits, setFruits] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
   const [civility, setCivility] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -14,32 +15,29 @@ const RestaurantReservationForm = () => {
   const [email, setEmail] = useState('');
   const [subscribeNews, setSubscribeNews] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [filteredFruits, setFilteredFruits] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
   const [showPopups, setShowPopups] = useState(false);
-
-  const handleConfirmReservation = () => {
-    setShowPopups(true); // Définissez showPopup à true pour afficher le message de confirmation
-  };
+  
 
   useEffect(() => {
-    const fetchFruits = async () => {
+    const fetchRestaurants = async () => {
       try {
-        const response = await axios.get('URL_DE_VOTRE_API/fruits');
-        setFruits(response.data);
+        const response = await axios.get('https://capstone2-c2-dieuleveut-ngele.onrender.com/api/restaurants');
+        setRestaurants(response.data);
       } catch (error) {
-        console.error('Erreur lors de la récupération des fruits :', error);
+        console.error('Erreur lors de la récupération des restaurants :', error);
       }
     };
 
-    fetchFruits();
+    fetchRestaurants();
   }, []);
 
   const handleReservationFormClick = async () => {
     try {
-      const response = await axios.post('URL_DE_VOTRE_API/reservations', {
+      const response = await axios.post('https://capstone2-c2-dieuleveut-ngele.onrender.com/api/postreservation', {
         civility,
         firstName,
         lastName,
@@ -48,7 +46,7 @@ const RestaurantReservationForm = () => {
         subscribeNews,
       });
 
-      console.log('Réponse de l\'API :', response.data);
+      console.log("Réponse de l'API :", response.data);
       setShowPopups(true);
       sendConfirmationEmail();
       handleConfirmReservation();
@@ -62,7 +60,6 @@ const RestaurantReservationForm = () => {
     const subject = 'Confirmation de réservation';
     const message = 'Votre réservation a été confirmée. Merci!';
     
-    // Ici vous pouvez utiliser une API d'envoi d'email ou une librairie comme nodemailer pour envoyer l'email
     
     console.log(`Email envoyé à ${email} avec le sujet : ${subject} et le message : ${message}`);
   };
@@ -72,7 +69,7 @@ const RestaurantReservationForm = () => {
     const emailInput = document.getElementById('emailInput');
     const email = emailInput.value;
     
-    fetch('http://localhost:3000/sendEmail', {
+    fetch('https://capstone2-c2-dieuleveut-ngele.onrender.com/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -96,18 +93,22 @@ const RestaurantReservationForm = () => {
     sendConfirmationEmail();
   };
 
+  const handleConfimationClick = () => {
+    setShowPopups(true);
+  };
+
   const handleInputChange = (e) => {
     const input = e.target.value.toLowerCase();
     setInputValue(input);
 
-    const filteredResults = fruits.filter(fruit => fruit.toLowerCase().startsWith(input));
-    setFilteredFruits(filteredResults);
+    const filteredResults = restaurants.filter(restaurant => restaurant.toLowerCase().startsWith(input));
+    setFilteredRestaurants(filteredResults);
     setShowDropdown(false);
   };
 
-  const handleFruitClick = (fruit) => {
-    setInputValue(fruit);
-    setFilteredFruits([]);
+  const handleRestaurantClick = (restaurant) => {
+    setInputValue(restaurant);
+    setFilteredRestaurants([]);
     setShowDropdown(false);
   };
 
@@ -140,11 +141,12 @@ const RestaurantReservationForm = () => {
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 
             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
             focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            onChange={(e) => setCivility(e.target.value)}
           >
             <option value="">Sélectionner</option>
-            <option value="Mr">Monsieur</option>
-            <option value="Ms">Madame</option>
-            <option value="At">Autre</option>
+            <option value={civility}>Monsieur</option>
+            <option value={civility}>Madame</option>
+            <option value={civility}>Autre</option>
           </select>
         </div>
         <div>
@@ -153,7 +155,8 @@ const RestaurantReservationForm = () => {
             type="text"
             name="firstName"
             placeholder="Prénom"
-            
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900
             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2
             focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -166,7 +169,8 @@ const RestaurantReservationForm = () => {
             type="text"
             name="lastName"
             placeholder="Nom"
-            
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 
             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
             focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -179,19 +183,21 @@ const RestaurantReservationForm = () => {
             type="text"
             name="phone"
             placeholder="+243 824 045 533"
-            
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 
             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
             focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
         <div className="sm:col-span-2">
-          <label className="block mb-2 font-semibold text-white">Email</label>
+          <label name="email" className="block mb-2 font-semibold text-white">Email</label>
           <input
             type="email"
-            name="emain"
+            name="email"
             placeholder="restofacile@gmail.com"
-            value={inputValue}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 
             shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
             focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -204,11 +210,13 @@ const RestaurantReservationForm = () => {
               type="checkbox"
               name="subscribeNews"
               className="form-checkbox"
+              value={subscribeNews}
+              onChange={(e) => setSubscribeNews(e.target.value)}
             />
             <span>Je souhaite recevoir les actualités et promotions par email.</span>
           </label>
         </div>
-        <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg w-full mt-4" onClick={() => setShowPopup(false)}>
+        <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg w-full mt-4" onClick={handleConfimationClick}>
             Envoyer une demande de réservation
             </button>
         
@@ -222,13 +230,16 @@ const RestaurantReservationForm = () => {
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 ">
       {showPopups && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 opacity-90 flex items-center justify-center">
-          <div className="bg-black p-8 rounded-lg">
-            <h2 className="text-white text-2xl mb-4">Confirmation de réservation</h2>
-            <p className="text-white">Votre réservation a été confirmée. Merci!</p>
-          </div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 opacity-90 flex items-center justify-center">
+        <div className="bg-black p-8 rounded-lg">
+          <h2 className="text-center text-2xl mb-4 font-Georgia text-white">Confirmation de réservation</h2>
+          <p className="text-white mb-4">Votre réservation a été confirmée. Un email de confirmation vous sera envoyé.</p>
+          <button className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg" onClick={() => setShowPopups()}>
+            Fermer
+          </button>
         </div>
-      )}
+      </div>
+    )}
       
 <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
   <div className="flex items-center border-2 border-white bg-white rounded-lg w-full md:w-auto">
@@ -270,9 +281,9 @@ const RestaurantReservationForm = () => {
     />
     {showDropdown && (
       <ul ref={dropdownRef} className="absolute z-10 ml-[2%] top-full w-44 bg-white border border-gray-200 rounded-lg shadow-md max-h-32 overflow-y-auto">
-        {filteredFruits.map(fruit => (
-          <li key={fruit} onClick={() => handleFruitClick(fruit)} className="cursor-pointer hover:bg-gray-200 p-1">
-            {fruit}
+        {filteredRestaurants.map(restaurant => (
+          <li key={restaurant} onClick={() => handleRestaurantClick(restaurant)} className="cursor-pointer hover:bg-gray-200 p-1">
+            {restaurant}
           </li>
         ))}
       </ul>

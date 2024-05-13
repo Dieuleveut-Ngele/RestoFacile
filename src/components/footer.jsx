@@ -5,7 +5,7 @@ import ScrollToTopPage from './ScrollTopPage';
 
 const Footer = () => {
   return (
-    <footer className="relative isolate bg-gray-900 p-4 text-white font-serif">
+    <footer className="w-full bg-gray-900 text-white font-seri">
       <div className="flex flex-col md:flex-row items-center justify-between ml-20 py-5">
         <div className="w-full md:w-1/3 mb-4 md:mb-0">
           <h3 className="text-lg font-bold mb-2">Coordonnées</h3>
@@ -36,4 +36,6 @@ const Footer = () => {
 }
 
 export default Footer;
+
+
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from "react-router-dom";
+import Loader from '../components/loader';
 import axios from "axios";
 
 export default function Login () {
@@ -7,10 +8,12 @@ export default function Login () {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await axios.post('https://capstone2-c2-dieuleveut-ngele.onrender.com/api/login', {
@@ -29,12 +32,18 @@ export default function Login () {
     } catch (error) {
       console.error('Erreur lors de la connexion :', error);
       setError('Erreur lors de la connexion');
+    } finally {
+      setLoading(false); // Désactivez le chargement après la requête
     }
   };
 
   
   return (
-    <section>
+
+    <section> 
+        {loading ? (
+        <Loader /> 
+      ) : (
       <div className= "container h-full">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
@@ -48,7 +57,7 @@ export default function Login () {
             <form className="space-y-6" onSubmit={handleLogin}>
               <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 Connectez-vous
-                {error && <p className="text-red-500 mb-4 sm-5">{error}</p>}
+                {error && <p className="text-red-500 mb-4 text-lg font-semibold">{error}</p>}
               </h2>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -104,7 +113,7 @@ export default function Login () {
                   Se connecter
                 </button>
               </div>
-
+              
               <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                 <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
                   OR
@@ -156,6 +165,8 @@ export default function Login () {
           </div>
         </div>
       </div>
+     
+      )}
     </section>
   );
 }; 
